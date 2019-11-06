@@ -10,16 +10,26 @@
 //o: array of subarrays i: array and chunk size 
 
 function chunk(array, size) {
-    const result = [];
-    for (let element of array) {
-        let last = result[result.length - 1];
-        if (!last || last.length === size) {
-            result.push([element]);
-        } else {
-            last.push(element)
-        }
+    const chunked = [];
+    let index = 0;
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
     }
-    return result;
+    return chunked; 
 }
 
 module.exports = chunk;
+
+// function chunk(array, size) {
+//     const result = [];
+//     for (let element of array) {
+//         let last = result[result.length - 1];
+//         if (!last || last.length === size) {
+//             result.push([element]);
+//         } else {
+//             last.push(element)
+//         }
+//     }
+//     return result;
+// }

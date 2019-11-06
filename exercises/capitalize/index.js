@@ -9,13 +9,25 @@
 // o: capitalized string i: string c: time complexity 
 
 function capitalize(str) {
-    let capitalized = [];
-    for (let word of str.split(' ')) {
-        capitalized.push(word[0].toUpperCase() + word.slice(1))
-    }
-    return capitalized.join(' ');
-}
+    let result = str[0].toUpperCase();
 
-capitalize('a short sentence');
+    for (let i = 1; i < str.length; i++) {
+        if (str[i-1] === ' ') {
+            result += str[i].toUpperCase();
+        } else {
+            result += str[i];
+        }
+    }
+    return result;
+ }
+
 
 module.exports = capitalize;
+
+// function capitalize(str) {
+//     let capitalized = [];
+//     for (let word of str.split(' ')) {
+//         capitalized.push(word[0].toUpperCase() + word.slice(1))
+//     }
+//     return capitalized.join(' ');
+// }

@@ -7,6 +7,17 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+//output: boolean 
+//input: string 
+//constraint: include spaces and punctuation 
+//examples:
+//   palindrome("abba") === true
+//   palindrome("abcdefg") === false
+
+function palindrome(str) {
+  if (str === str.split('').reverse().join('')) {
+      return true;
+  }
+}
 
 module.exports = palindrome;

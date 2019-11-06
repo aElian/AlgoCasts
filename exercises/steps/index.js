@@ -20,11 +20,16 @@
 //c: correct number of empty spaces for each line
 
 function steps(n) {
-    for (let i = 0; i < n; i++) {
-        let pound = '#';
-        let space = ' ';
-        let expression = pound.repeat(i+1) + space.repeat(n-(i + 1));
-        console.log(expression);
+    for (let row = 0; row < n; row++) {
+        let stair = '';
+        for (let column = 0; column < n; column++) {
+            if (column <= row) {
+                stair += "#";
+            } else {
+                stair += ' ';
+            }
+        }
+        console.log(stair);
     }
 }
 
